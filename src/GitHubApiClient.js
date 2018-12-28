@@ -54,7 +54,7 @@ class GitHubApiClient {
     const after = endCursor ? `after:"${endCursor}",` : ''
     return `
       query {
-        search(first:100, ${after} query:"type:pr ${author.toQuery()} ${repo.toQuery()} ${user.toQuery()} state:open", type: ISSUE) {
+        search(first:100, ${after} query:"is:pr ${author.toQuery()} ${repo.toQuery()} ${user.toQuery()} state:open", type: ISSUE) {
           pageInfo {
             endCursor,
             hasNextPage,
